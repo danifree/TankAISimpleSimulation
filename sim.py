@@ -344,15 +344,14 @@ while True:
     if len(tank_objs) != 0:
         for t in tank_objs:
             if t.is_enemy_in_range(render_field):
-                #pass
                 bullet_gen.gen(copy.deepcopy(t.pos), \
                         copy.deepcopy(t.move_vec), render_field)
             else:
                 prev_pos = copy.deepcopy(t.pos)
                 t.check_neigh_cells_stat(render_field)
+                if t.is_collided() or t.is_arbitrary_moved():
+                    t.rand_move_vec()
                 if not t.is_deadlock():
-                    if t.is_collided() or t.is_arbitrary_moved():
-                        t.rand_move_vec()
                     t.move()
                     render_field[prev_pos['y']][prev_pos['x']] = \
                             game_map[prev_pos['y']][prev_pos['x']]
