@@ -2,7 +2,7 @@
 This project demonstrates a fighting scenario between two teams of simple tank AIs. 
 
 ### DEMO
-![DemoGif](https://dl.dropboxusercontent.com/u/50139733/demo_re.gif)
+![DemoGif](https://github.com/srwt/TankAISimpleSimulation/raw/master/demo.gif)
 
 #### Descriptions
 * "Axx" means a tank (Team A), 
